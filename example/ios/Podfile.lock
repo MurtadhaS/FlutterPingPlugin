@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_ping_plugin (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - flutter_ping_plugin (from `.symlinks/plugins/flutter_ping_plugin/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  flutter_ping_plugin:
+    :path: ".symlinks/plugins/flutter_ping_plugin/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_ping_plugin: 5b81edf497b5fc9b9cbd419ee0e42d967b3256a7
+
+PODFILE CHECKSUM: b46e4021d16b47d4e869bc5c40304f2de1290ded
+
+COCOAPODS: 1.6.1
