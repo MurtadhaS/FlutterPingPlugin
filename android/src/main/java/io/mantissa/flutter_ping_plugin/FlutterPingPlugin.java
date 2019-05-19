@@ -28,28 +28,28 @@ public class FlutterPingPlugin implements MethodCallHandler {
 		} else if (call.method.equals("getPingResult")) {
 			String url = call.argument("url");
 			String resultString = executeCmd("ping -c 5 -w 5 " + url, false);
-			result.success(resultString);
+			  result.success(resultString);
 		}
 	}
 
 
 	static String executeCmd(String cmd, boolean sudo) {
 		try {
-			Process p;
+			Process process;
 			if (!sudo)
-				p = Runtime.getRuntime().exec(cmd);
+				process = Runtime.getRuntime().exec(cmd);
 			else {
-				p = Runtime.getRuntime().exec(new String[]{"su", "-c", cmd});
+				process = Runtime.getRuntime().exec(new String[]{"su", "-c", cmd});
 			}
-			BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			BufferedReader stdInput = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-			String s;
-			String res = "";
-			while ((s = stdInput.readLine()) != null) {
-				res += s + "\n";
+			String string;
+			String response = "";
+			while ((string = stdInput.readLine()) != null) {
+				response += string + "\n";
 			}
-			p.destroy();
-			return res;
+			process.destroy();
+			return response;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
